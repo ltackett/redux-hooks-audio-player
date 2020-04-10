@@ -9,12 +9,11 @@ export type Track = {
 }
 
 export type Playlist = {
-  name?: string;
-  tracks?: [Track]
-  prevTrackIndex?: number
-  nextTrackInded?: number
+  name: string;
+  tracks: [Track]
 }
 
-export type NowPlaying = {
-  track: Track | undefined
+export type RootState = {
+  loadedPlaylist: Playlist | undefined
+  nowPlaying: Track | undefined
 }

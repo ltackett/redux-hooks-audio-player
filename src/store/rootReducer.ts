@@ -1,11 +1,9 @@
 import { combineReducers } from 'redux'
 
-import { loadedPlaylistReducer } from './reducers/loadedPlaylistReducer';
-import { nowPlayingReducer } from './reducers/nowPlayingReducer';
+import { playerReducer } from './reducers/playerReducer';
 
 export const rootReducer = combineReducers({
-  loadedPlaylist: loadedPlaylistReducer,
-  nowPlaying: nowPlayingReducer
+  player: playerReducer
 })
 
 export type RootState = ReturnType<typeof rootReducer>

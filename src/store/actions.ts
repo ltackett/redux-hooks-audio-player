@@ -21,7 +21,6 @@ interface PlayTrack {
 
 interface PlayNextTrack {
   type: typeof PLAY_NEXT_TRACK
-  track: Track
 };
 
 export type PlaylistActions =

@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { Track, Playlist as PlaylistType } from '../../store/types';
+import { Track, Playlist as IPlaylist } from '../../store/types';
 import { PlaylistTrack } from '../PlaylistTrack/PlaylistTrack';
 
 export const Playlist = (props: any) => {
   // Local state for hasLoaded
   const [hasLoaded, setHasLoaded] = React.useState(false);
-  const [localPlaylist, setLocalPlaylist] = React.useState<PlaylistType>({})
+  const [localPlaylist, setLocalPlaylist] = React.useState<IPlaylist | undefined>()
 
   // Create params for fetching a playlist from SoundCloud
   const params: any = {
@@ -45,7 +45,7 @@ export const Playlist = (props: any) => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.location.pathname])
 
-  if (!hasLoaded) {
+  if (!hasLoaded || !localPlaylist) {
     return (
       <header>
         <h2>loading playlist...</h2>

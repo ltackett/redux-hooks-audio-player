@@ -9,9 +9,11 @@ import { LOAD_PLAYLIST, PLAY_TRACK, RootActions } from '../../store/actions';
 export const PlaylistTrack = (props: any) => {
   const { track, localPlaylist } = props
 
-  // Redux hooks
-  const loadedPlaylist = useSelector((state: RootState) => state.loadedPlaylist)
+  // Redux hook to gain access to dispatch
   const dispatch: Dispatch<RootActions> = useDispatch()
+
+  // Redux hook to select some state from the store
+  const loadedPlaylist = useSelector((state: RootState) => state.player.loadedPlaylist)
 
   // Handle when a track is clicked
   const handleTrackClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, track: Track) => {
