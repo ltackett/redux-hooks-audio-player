@@ -12,8 +12,3 @@ export type Playlist = {
   name: string;
   tracks: [Track]
 }
-
-export type RootState = {
-  loadedPlaylist: Playlist | undefined
-  nowPlaying: Track | undefined
-}

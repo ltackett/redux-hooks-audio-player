@@ -1,7 +1,12 @@
-import { RootState } from '../types'
-import { LOAD_PLAYLIST, PLAY_TRACK, RootActions, PLAY_NEXT_TRACK } from '../actions'
+import { Playlist, Track } from '../types'
+import { LOAD_PLAYLIST, PLAY_TRACK, PLAY_NEXT_TRACK, RootActions } from '../actions'
 
-const initialState: RootState = {
+type PlayerState = {
+  loadedPlaylist: Playlist | undefined
+  nowPlaying: Track | undefined
+}
+
+const initialState: PlayerState = {
   loadedPlaylist: undefined,
   nowPlaying: undefined
 }
@@ -9,7 +14,7 @@ const initialState: RootState = {
 export function playerReducer(
   state = initialState,
   action: RootActions
-): RootState {
+): PlayerState {
   switch (action.type) {
     case LOAD_PLAYLIST: {
       return {
