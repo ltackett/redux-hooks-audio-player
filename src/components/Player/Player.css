@@ -1,0 +1,26 @@
+.Player header.nowPlaying img { grid-area: thumbnail; }
+.Player header.nowPlaying h3 { grid-area: trackname; align-self: end; }
+
+.Player {
+  display: flex;
+  flex-direction: column;
+}
+
+.Player header {
+  margin: 0 0 1em;
+}
+
+.Player header.nowPlaying {
+  text-align: left;
+  display: inline-grid;
+  grid-gap: 1em;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+   "thumbnail trackname"
+  ;
+}
+
+.Player audio {
+  width: 100%;
+}

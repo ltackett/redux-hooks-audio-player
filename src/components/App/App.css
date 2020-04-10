@@ -1,0 +1,23 @@
+.App header { grid-area: header; }
+.App main { grid-area: main; }
+.App aside { grid-area: aside; }
+.App footer { grid-area: footer; }
+
+.App {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 3em;
+
+  display: grid;
+  grid-gap: 3em;
+  grid-template-columns: 300px auto;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "aside main"
+    "footer footer"
+  ;
+}
